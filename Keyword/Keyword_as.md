@@ -15,3 +15,6 @@ assert_eq!(thing1 as char, 'Y');
 
 2. 重命名一个import进来的名字
 
+### 原文地址
+
+[doc.rust-lang.org](https://doc.rust-lang.org/std/keyword.as.html)

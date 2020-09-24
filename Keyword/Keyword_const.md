@@ -28,3 +28,7 @@ const项看起来相当像static项，这会造成“什么时候该用哪个”
 在Rust中，常量和static变量的命名遵守SCREAMING_SNAKE_CASE。
 
 const关键字还被用于raw pointer并与mut关键字配合使用，像是\*const T和\*mut T。这部分的详细解释位于Primitive Type pointer中。
+
+### 原文地址
+
+[doc.rust-lang.org](https://doc.rust-lang.org/std/keyword.const.html)

@@ -196,3 +196,7 @@ unsafe {
     }
 }
 ```
+
+### 原文地址
+
+[doc.rust-lang.org](https://doc.rust-lang.org/std/primitive.slice.html)

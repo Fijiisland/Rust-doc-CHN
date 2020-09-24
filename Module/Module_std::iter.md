@@ -193,3 +193,7 @@ for number in five_numbers {
 let ones = std::iter::repeat(1);
 let least = ones.min().unwrap(); // Oh no!An infinite loop!
 ```
+
+### 原文地址
+
+[doc.rust-lang.org](https://doc.rust-lang.org/std/iter/index.html)

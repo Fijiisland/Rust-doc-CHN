@@ -78,3 +78,7 @@ let x_init = unsafe {
 };
 assert_eq!(x_init, true);
 ```
+
+### 原文地址
+
+[doc.rust-lang.org](https://doc.rust-lang.org/std/mem/union.MaybeUninit.html)

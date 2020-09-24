@@ -160,3 +160,7 @@ assert_eq!(iter.nth(1), None);
 let a = [1, 2, 3];
 assert_eq!(a.iter().nth(10), None);
 ```
+
+### 原文地址
+
+[doc.rust-lang.org](https://doc.rust-lang.org/std/iter/trait.Iterator.html)

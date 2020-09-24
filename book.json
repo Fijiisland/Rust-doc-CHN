@@ -18,7 +18,6 @@
         "github",
         "github-buttons",
         "sharing-plus",
-        "anchor-navigation-ex",
         "favicon"
     ],
     "pluginsConfig": {
@@ -57,9 +56,6 @@
                 "google", "facebook", "weibo", "twitter",
                 "qq", "qzone", "linkedin", "pocket"
             ]
-        },
-        "anchor-navigation-ex": {
-            "showLevel": false
         }
     }
 }

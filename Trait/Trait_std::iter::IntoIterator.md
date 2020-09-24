@@ -54,3 +54,7 @@ for (i, n) in c.into_iter().enumerate() {
     assert_eq!(i as i32, n);
 }
 ```
+
+### 原文地址
+
+[doc.rust-lang.org](https://doc.rust-lang.org/std/iter/trait.IntoIterator.html)

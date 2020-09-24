@@ -67,3 +67,7 @@ let [john, roa] = ["John".to_string(), "Roa".to_string()];
 move_away(john);
 move_away(roa); 
 ```
+
+### 原文地址
+
+[doc.rust-lang.org](https://doc.rust-lang.org/std/primitive.array.html)

@@ -58,3 +58,7 @@ impl Example for Foo {
 
 assert_eq!(Foo::example().0, Foo(42).0);
 ```
+
+### 原文地址
+
+[doc.rust-lang.org](https://doc.rust-lang.org/std/keyword.Self.html)

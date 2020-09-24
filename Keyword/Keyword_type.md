@@ -37,3 +37,7 @@ impl<T> Iterator for Once<T> {
     }
 }
 ```
+
+### 原文地址
+
+[doc.rust-lang.org](https://doc.rust-lang.org/std/keyword.type.html)

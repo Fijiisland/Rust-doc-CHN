@@ -70,4 +70,7 @@ unsafe {
 ```
 
 一般你不会在Rust中使用malloc和free，但是C语言的APIs经常会创造很多指针，因此是Rust中raw指针的一种来源。（可能是来自于Old-School程序员的习惯）
-    
+
+### 原文地址
+
+[doc.rust-lang.org](https://doc.rust-lang.org/std/primitive.pointer.html)
