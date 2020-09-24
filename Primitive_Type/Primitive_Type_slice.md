@@ -1,4 +1,6 @@
-### 描述： 一个连续序列的具有动态大小的视图。这里的连续意味着元素被布局使得每个元素与其相邻元素的距离相同。
+## Primitive Type slice
+
+### 描述： 属于一个连续序列的具有动态大小的视图。这里的连续意味着元素被布局使得每个元素与其相邻元素的距离相同。
 <br/>
 更具体地说，Slices是一块内存的视图，表征为一个指针以及一个长度。
 
@@ -19,32 +21,32 @@ x[1] = 7;
 assert_eq!(x, &[1, 7, 3]);
 ```
 
-## Implementations 方法实现
+### Implementations 方法实现
 
 pub const fn len(&self) -> usize
 
 返回slice的元素数量
     
-### Examples
+#### Examples
 
 ```rust 
     let a = [1, 2, 3];
     assert_eq!(a.len(), 3);
 ```
 
----
+***
     
 pub const is_empty(&self) -> bool
 
 当slice长度为0时返回true
 
----
+***
     
 pub fn first(&self) -> Option<&T>
 
 返回slice的第一个元素，若slice为空返回None
     
-### Examples
+#### Examples
     
 ```rust
 let v = [10, 40, 30];
@@ -54,13 +56,13 @@ let w: &[i32] = &[];
 assert_eq!(None, w.first());
 ```    
 
----
+***
     
 pub fn first_mut(&mut self) -> Option<&mut T>
 
 返回指向slice第一个元素的可变指针，若slice为空返回None
     
-### Examples
+#### Examples
 
  ```rust   
 let x = &mut[0, 1, 2];
@@ -72,7 +74,7 @@ if let Some(first) = x.first_mut() {
 assert_eq!(x, &[5, 1, 2]);
 ```     
 
----
+***
 
 pub fn get\<I\>(&self, index: I) -> Option<&<I as SliceIndex<[T]>>::Output>
             where I: SliceIndex<[T]>
@@ -82,7 +84,7 @@ pub fn get\<I\>(&self, index: I) -> Option<&<I as SliceIndex<[T]>>::Output>
 - 如果是一个positon，返回此处的元素，如果超出范围返回None
 - 如果是一个range，返回与range对应的subslice，超出范围返回None
 
-### Examples
+#### Examples
 
 ```rust 
 let v = [10, 40, 30];
@@ -92,14 +94,14 @@ assert_eq!(None, v.get(3));
 assert_eq!(None, v.get(0..4));
 ```
 
----
+***
     
 pub fn get_mut\<I\>(&mut self, index: I) -> Option<&mut <I as SliceIndex[T]>::Output>
             where I: SliceIndex<[T]>
             
 根据index的类型，返回一个元素的可变引用或者可变子切片subslice
 
-### Examples
+#### Examples
 
 ```rust 
 let x = &mut [0, 1, 2];
@@ -110,7 +112,7 @@ if let Some(elem) = x.get_mut(1) {
 assert_eq!(x, &[0, 42, 2]);
 ```
 
----
+***
     
 pub fn get_unchecked\<T\r>(&self, index: I) -> &<I as SliceIndex<[T]>>::Output
             where I: SliceIndex<[T]>
@@ -119,7 +121,7 @@ pub fn get_unchecked\<T\r>(&self, index: I) -> &<I as SliceIndex<[T]>>::Output
 
 若用户通过此方法查找一个超出边界的索引，即使返回的引用不被使用，也会造成未定义行为。
 
-### Examples
+#### Examples
 
 ```rust 
 let x = &[1, 2, 4];
@@ -128,14 +130,14 @@ unsafe {
 }
 ```
 
----  
+***
     
 pub fn get_unchecked_mut\<T\>(&mut self, index: I) -> &mut <I as SliceIndex<[T]>>::Output
             where I: SliceIndex<[T]>
             
 返回元素或子切片的可变引用，不做边界检查。此方法一般用于performance critical的场景
 
-### Examples
+#### Examples
 
 ```rust 
 let x = &mut [1, 2, 4];
@@ -147,7 +149,7 @@ unsafe {
 assert_eq!(x, &[1, 13, 4]);
 ```   
 
----
+***
     
 pub fn as_ptr(&self) -> *const T
 
@@ -159,7 +161,7 @@ pub fn as_ptr(&self) -> *const T
 
 修改slice所引用的容器可能会造成其缓冲区被重分配，这会导致任何指向它的指针非法。
 
-### Examples
+#### Examples
 
 ```rust 
 let x = &[1, 2 ,4];
@@ -172,7 +174,7 @@ unsafe {
 }
 ```
 
----  
+***
     
 pub fn as_mut_ptr(&mut self) -> *mut T
 
@@ -182,7 +184,7 @@ pub fn as_mut_ptr(&mut self) -> *mut T
 
 修改slice所引用的容器可能会造成其缓冲区被重分配，这会导致任何指向它的指针非法。
 
-### Examples
+#### Examples
 
 ```rust 
 let x = &mut [1, 2, 4];

@@ -1,0 +1,722 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>std::iter::IntoIterator · Rust-doc-CHN</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Fijiisland">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../ch5/README.md" />
+    
+    
+    <link rel="prev" href="Trait_std::iter::Iterator.html" />
+    
+
+    
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Fijiisland","repo":"Rust-doc-CHN","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/Fijiisland" target="_blank" class="custom-link">Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Keyword/Keyword_const.html">
+            
+                <a href="../Keyword/Keyword_const.html">
+            
+                    
+                    Rust关键字
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Keyword/Keyword_const.html">
+            
+                <a href="../Keyword/Keyword_const.html">
+            
+                    
+                    Keyword const
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Keyword/Keyword_type.html">
+            
+                <a href="../Keyword/Keyword_type.html">
+            
+                    
+                    Keyword type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Keyword/Keyword_as.html">
+            
+                <a href="../Keyword/Keyword_as.html">
+            
+                    
+                    Keyword as
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Keyword/Keyword_super.html">
+            
+                <a href="../Keyword/Keyword_super.html">
+            
+                    
+                    Keyword super
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Keyword/Keyword_dyn.html">
+            
+                <a href="../Keyword/Keyword_dyn.html">
+            
+                    
+                    Keyword dyn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Keyword/Keyword_Self.html">
+            
+                <a href="../Keyword/Keyword_Self.html">
+            
+                    
+                    Keyword Self
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Keyword/Keyword_trait.html">
+            
+                <a href="../Keyword/Keyword_trait.html">
+            
+                    
+                    Keyword trait
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ch1/README.md">
+            
+                <span>
+            
+                    
+                    Rust基础类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Primitive_Type/Primitive_Type_Range.html">
+            
+                <a href="../Primitive_Type/Primitive_Type_Range.html">
+            
+                    
+                    Primitive Type range
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Primitive_Type/Primitive_Type_slice.html">
+            
+                <a href="../Primitive_Type/Primitive_Type_slice.html">
+            
+                    
+                    Primitive Type slice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Primitive_Type/Primitive_Type_array.html">
+            
+                <a href="../Primitive_Type/Primitive_Type_array.html">
+            
+                    
+                    Primitive Type array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Primitive_Type/Primitive_Type_pointer.html">
+            
+                <a href="../Primitive_Type/Primitive_Type_pointer.html">
+            
+                    
+                    Primitive Type pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ch2/README.md">
+            
+                <span>
+            
+                    
+                    Rust的各大模块
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Module/Module_std::iter.html">
+            
+                <a href="../Module/Module_std::iter.html">
+            
+                    
+                    std::iter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Module/Module_std::sync.html">
+            
+                <a href="../Module/Module_std::sync.html">
+            
+                    
+                    std::sync
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Module/Module_std::ptr.html">
+            
+                <a href="../Module/Module_std::ptr.html">
+            
+                    
+                    std::ptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../ch2/handbook.md">
+            
+                <span>
+            
+                    
+                    个人教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../ch3/README.md">
+            
+                <span>
+            
+                    
+                    Structs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Struct/Struct_std::sync::mpsc::TryIter.html">
+            
+                <a href="../Struct/Struct_std::sync::mpsc::TryIter.html">
+            
+                    
+                    std::sync::mpsc::TryIter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ch4/README.md">
+            
+                <span>
+            
+                    
+                    Rust Traits
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="Trait_std::iter::Iterator.html">
+            
+                <a href="Trait_std::iter::Iterator.html">
+            
+                    
+                    std::iter::Iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2" data-path="Trait_std::iter::IntoIterator.html">
+            
+                <a href="Trait_std::iter::IntoIterator.html">
+            
+                    
+                    std::iter::IntoIterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../ch5/README.md">
+            
+                <span>
+            
+                    
+                    Rust Unions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Union/Union_std::mem::MaybeUninit.html">
+            
+                <a href="../Union/Union_std::mem::MaybeUninit.html">
+            
+                    
+                    std::mem::MaybeUninit
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../ps/handbooks.md">
+            
+                <span>
+            
+                    
+                    备注
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../ps/ref.md">
+            
+                <span>
+            
+                    
+                    参考文献
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../ps/thanks.md">
+            
+                <span>
+            
+                    
+                    致谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >std::iter::IntoIterator</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#trait-stditerintoiterator"><b></b>Trait std::iter::IntoIterator</a></li><ul><li><span class="title-icon "></span><a href="#&#x63CF;&#x8FF0;&#xFF1A;-&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;iterator"><b></b>&#x63CF;&#x8FF0;&#xFF1A; &#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;Iterator.</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="trait-stditerintoiterator"><a name="trait-stditerintoiterator" class="anchor-navigation-ex-anchor" href="#trait-stditerintoiterator"><i class="fa fa-link" aria-hidden="true"></i></a><a name="trait-stditerintoiterator" class="plugin-anchor" href="#trait-stditerintoiterator"><i class="fa fa-link" aria-hidden="true"></i></a>Trait std::iter::IntoIterator</h2>
+<h3 id="&#x63CF;&#x8FF0;&#xFF1A;-&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;iterator"><a name="&#x63CF;&#x8FF0;&#xFF1A;-&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;iterator" class="anchor-navigation-ex-anchor" href="#&#x63CF;&#x8FF0;&#xFF1A;-&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;iterator"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x63CF;&#x8FF0;&#xFF1A;-&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;iterator" class="plugin-anchor" href="#&#x63CF;&#x8FF0;&#xFF1A;-&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;iterator"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63CF;&#x8FF0;&#xFF1A; &#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;Iterator.</h3>
+<p>&#x901A;&#x8FC7;&#x4E3A;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x5B9E;&#x73B0;trait IntoIterator&#xFF0C;&#x4F60;&#x8D1F;&#x8D23;&#x5B9A;&#x4E49;&#x6B64;&#x7C7B;&#x578B;&#x5982;&#x4F55;&#x88AB;&#x8F6C;&#x4E3A;&#x4E00;&#x4E2A;iterator&#x3002;&#x8FD9;&#x5BF9;&#x4E8E;&#x63CF;&#x8FF0;&#x67D0;&#x79CD;&#x96C6;&#x5408;&#x7684;&#x7C7B;&#x578B;&#x5F88;&#x5E38;&#x89C1;&#x3002;</p>
+<p>&#x5B9E;&#x73B0;IntoIterator&#x7684;&#x4E00;&#x4E2A;&#x4F18;&#x70B9;&#x662F;&#xFF0C;&#x4F60;&#x7684;&#x7C7B;&#x578B;&#x53EF;&#x4E0E;Rust&#x7684;for&#x5FAA;&#x73AF;&#x8BED;&#x6CD5;&#x914D;&#x5408;&#x8FD0;&#x4F5C;&#x3002;</p>
+<h4 id="examples"><a name="examples" class="anchor-navigation-ex-anchor" href="#examples"><i class="fa fa-link" aria-hidden="true"></i></a><a name="examples" class="plugin-anchor" href="#examples"><i class="fa fa-link" aria-hidden="true"></i></a>Examples:</h4>
+<p>&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> v = <span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> iter = v.into_iter();
+
+<span class="hljs-built_in">assert_eq!</span>(<span class="hljs-literal">Some</span>(<span class="hljs-number">1</span>), iter.next());
+<span class="hljs-built_in">assert_eq!</span>(<span class="hljs-literal">Some</span>(<span class="hljs-number">2</span>), iter.next());
+<span class="hljs-built_in">assert_eq!</span>(<span class="hljs-literal">Some</span>(<span class="hljs-number">3</span>), iter.next());
+<span class="hljs-built_in">assert_eq!</span>(<span class="hljs-literal">None</span>, iter.next());
+</code></pre>
+<p>&#x5728;&#x4E3A;&#x4F60;&#x7684;&#x7C7B;&#x578B;&#x5B9E;&#x73B0;IntoIterator&#x540E;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// &#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;Vec&lt;T&gt; wrapper</span>
+<span class="hljs-meta">#[derive(Debug)]</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MyCollection</span></span>(<span class="hljs-built_in">Vec</span>&lt;<span class="hljs-keyword">i32</span>&gt;);
+
+<span class="hljs-keyword">impl</span> MyCollection {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span></span>() -&gt; MyCollection {
+        MyCollection(<span class="hljs-built_in">Vec</span>::new())
+    }
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>, elem: <span class="hljs-keyword">i32</span>) {
+        <span class="hljs-keyword">self</span>.<span class="hljs-number">0</span>.push(elem);
+    }
+}
+
+<span class="hljs-keyword">impl</span> <span class="hljs-built_in">IntoIterator</span> <span class="hljs-keyword">for</span> MyCollection {
+    <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-title">Item</span></span> = <span class="hljs-keyword">i32</span>;
+    <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-title">IntoIter</span></span> = std::vec::IntoIter&lt;Self::Item&gt;;
+
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">into_iter</span></span>(<span class="hljs-keyword">self</span>) -&gt; Self::IntoIter {
+        <span class="hljs-keyword">self</span>.<span class="hljs-number">0</span>.into_iter()
+    }
+}
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> c = MyCollection::new();
+c.add(<span class="hljs-number">0</span>);
+c.add(<span class="hljs-number">1</span>);
+c.add(<span class="hljs-number">2</span>);
+
+<span class="hljs-keyword">for</span> (i, n) <span class="hljs-keyword">in</span> c.into_iter().enumerate() {
+    <span class="hljs-built_in">assert_eq!</span>(i <span class="hljs-keyword">as</span> <span class="hljs-keyword">i32</span>, n);
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Trait_std::iter::Iterator.html" class="navigation navigation-prev " aria-label="Previous page: std::iter::Iterator">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../ch5/README.md" class="navigation navigation-next " aria-label="Next page: Rust Unions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"std::iter::IntoIterator","level":"1.6.2","depth":2,"next":{"title":"Rust Unions","level":"1.7","depth":1,"path":"ch5/README.md","ref":"ch5/README.md","articles":[{"title":"std::mem::MaybeUninit","level":"1.7.1","depth":2,"path":"Union/Union_std::mem::MaybeUninit.md","ref":"Union/Union_std::mem::MaybeUninit.md","articles":[]}]},"previous":{"title":"std::iter::Iterator","level":"1.6.1","depth":2,"path":"Trait/Trait_std::iter::Iterator.md","ref":"Trait/Trait_std::iter::Iterator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","anchors","github","github-buttons","sharing-plus","anchor-navigation-ex","favicon","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Fijiisland"},"livereload":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"github-buttons":{"buttons":[{"user":"Fijiisland","repo":"Rust-doc-CHN","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Fijiisland","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Rust-doc-CHN","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/Fijiisland"}},"gitbook":"3.2.3","description":"Rust官方文档翻译，个人爱好"},"file":{"path":"Trait/Trait_std::iter::IntoIterator.md","mtime":"2020-09-24T00:54:03.012Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-24T01:15:34.613Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,3 +1,5 @@
+## Primitive Type array
+
 此为Rust原始数组类型，表示为[T; N]，T代表数组元素类型，N代表非负的编译期常量数组尺寸。
 
 有两种创建一个array的语法形式：
@@ -21,7 +23,7 @@
 array支持切片，可在array上调用Primitive Type slice的方法。
 
 
-### Examples：
+#### Examples：
 
 ```rust
 let mut array: [i32; 3] = [0; 3];
