@@ -9,3 +9,7 @@
 # Contribution
 
 如果您有意愿参与此项目，您可以将此项目克隆到您的工作目录里，并随时可以push一个pull request或者提出issue。
+
+# Link
+
+Rust-doc-CHN电子书的在线阅览地址：[gitbook](https://hengyiyu2018.gitbook.io/rust-doc-chn/)。
