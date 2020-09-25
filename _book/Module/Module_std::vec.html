@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Primitive Type range · Rust-doc-CHN</title>
+        <title>std::vec · Rust-doc-CHN</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -63,8 +63,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Primitive_Type_slice.html" />
     
+    <link rel="prev" href="Module_std::ptr.html" />
     
 
     
@@ -255,9 +255,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="Primitive_Type_Range.html">
+        <li class="chapter " data-level="1.3.1" data-path="../Primitive_Type/Primitive_Type_Range.html">
             
-                <a href="Primitive_Type_Range.html">
+                <a href="../Primitive_Type/Primitive_Type_Range.html">
             
                     
                     Primitive Type range
@@ -268,9 +268,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="Primitive_Type_slice.html">
+        <li class="chapter " data-level="1.3.2" data-path="../Primitive_Type/Primitive_Type_slice.html">
             
-                <a href="Primitive_Type_slice.html">
+                <a href="../Primitive_Type/Primitive_Type_slice.html">
             
                     
                     Primitive Type slice
@@ -281,9 +281,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="Primitive_Type_array.html">
+        <li class="chapter " data-level="1.3.3" data-path="../Primitive_Type/Primitive_Type_array.html">
             
-                <a href="Primitive_Type_array.html">
+                <a href="../Primitive_Type/Primitive_Type_array.html">
             
                     
                     Primitive Type array
@@ -294,9 +294,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="Primitive_Type_pointer.html">
+        <li class="chapter " data-level="1.3.4" data-path="../Primitive_Type/Primitive_Type_pointer.html">
             
-                <a href="Primitive_Type_pointer.html">
+                <a href="../Primitive_Type/Primitive_Type_pointer.html">
             
                     
                     Primitive Type pointer
@@ -326,9 +326,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../Module/Module_std::iter.html">
+        <li class="chapter " data-level="1.4.1" data-path="Module_std::iter.html">
             
-                <a href="../Module/Module_std::iter.html">
+                <a href="Module_std::iter.html">
             
                     
                     std::iter
@@ -339,9 +339,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../Module/Module_std::sync.html">
+        <li class="chapter " data-level="1.4.2" data-path="Module_std::sync.html">
             
-                <a href="../Module/Module_std::sync.html">
+                <a href="Module_std::sync.html">
             
                     
                     std::sync
@@ -352,9 +352,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../Module/Module_std::ptr.html">
+        <li class="chapter " data-level="1.4.3" data-path="Module_std::ptr.html">
             
-                <a href="../Module/Module_std::ptr.html">
+                <a href="Module_std::ptr.html">
             
                     
                     std::ptr
@@ -365,9 +365,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../Module/Module_std::vec.html">
+        <li class="chapter active" data-level="1.4.4" data-path="Module_std::vec.html">
             
-                <a href="../Module/Module_std::vec.html">
+                <a href="Module_std::vec.html">
             
                     
                     std::vec
@@ -561,7 +561,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Primitive Type range</a>
+        <a href=".." >std::vec</a>
     </h1>
 </div>
 
@@ -576,12 +576,34 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="primitive-type-range"><a name="primitive-type-range" class="plugin-anchor" href="#primitive-type-range"><i class="fa fa-link" aria-hidden="true"></i></a>Primitive Type range</h2>
-<p>range&#x8868;&#x73B0;&#x5F62;&#x5F0F;&#x4E3A; (a..b)&#xFF0C;&#x5373;&#x4E00;&#x4E2A;&#x8303;&#x56F4;&#x3002;</p>
-<p>&#x6CE8;&#x610F;&#x5176;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x7684;&#x6570;&#x5B66;&#x8868;&#x8FBE;&#x4E3A; [a, b)</p>
-<blockquote>
-<p>&#x6B64;&#x8BCD;&#x6761;&#x4E3A;&#x8BD1;&#x8005;&#x52A0;&#x6CE8;&#xFF0C;&#x975E;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x8BCD;&#x6761;</p>
-</blockquote>
+                                <h2 id="module-stdvec"><a name="module-stdvec" class="plugin-anchor" href="#module-stdvec"><i class="fa fa-link" aria-hidden="true"></i></a>Module std::vec</h2>
+<h3 id="&#x63CF;&#x8FF0;&#xFF1A;-&#x4E00;&#x4E2A;&#x6BD7;&#x90BB;&#x4E14;&#x53EF;&#x589E;&#x957F;&#x7684;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#xFF0C;&#x5B58;&#x653E;&#x57FA;&#x4E8E;&#x5806;&#x5206;&#x914D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5199;&#x4F5C;vec"><a name="&#x63CF;&#x8FF0;&#xFF1A;-&#x4E00;&#x4E2A;&#x6BD7;&#x90BB;&#x4E14;&#x53EF;&#x589E;&#x957F;&#x7684;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#xFF0C;&#x5B58;&#x653E;&#x57FA;&#x4E8E;&#x5806;&#x5206;&#x914D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5199;&#x4F5C;vec" class="plugin-anchor" href="#&#x63CF;&#x8FF0;&#xFF1A;-&#x4E00;&#x4E2A;&#x6BD7;&#x90BB;&#x4E14;&#x53EF;&#x589E;&#x957F;&#x7684;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#xFF0C;&#x5B58;&#x653E;&#x57FA;&#x4E8E;&#x5806;&#x5206;&#x914D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5199;&#x4F5C;vec"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63CF;&#x8FF0;&#xFF1A; &#x4E00;&#x4E2A;&#x6BD7;&#x90BB;&#x4E14;&#x53EF;&#x589E;&#x957F;&#x7684;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#xFF0C;&#x5B58;&#x653E;&#x57FA;&#x4E8E;&#x5806;&#x5206;&#x914D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5199;&#x4F5C;Vec<t></t></h3>
+<p>Vectors&#x6709;&#x7740;O(1)&#x7684;&#x7D22;&#x5F15;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x5747;&#x644A;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(1)&#x7684;push(&#x5728;&#x5C3E;&#x90E8;)&#x4EE5;&#x53CA;O(1)&#x7684;pop(&#x4ECE;&#x5C3E;&#x90E8;)&#x3002;</p>
+<p>Vectors&#x4F1A;&#x786E;&#x4FDD;&#x6C38;&#x4E0D;&#x5206;&#x914D;&#x8D85;&#x8FC7;isize::MAX&#x4E2A;&#x5B57;&#x8282;&#x7684;&#x7A7A;&#x95F4;&#x3002;</p>
+<h4 id="examples"><a name="examples" class="plugin-anchor" href="#examples"><i class="fa fa-link" aria-hidden="true"></i></a>Examples</h4>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x7528;new&#x6765;&#x663E;&#x5F0F;&#x5730;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Vec<t>&#xFF1A;</t></p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> v: <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-keyword">i32</span>&gt; = <span class="hljs-built_in">Vec</span>::new();
+</code></pre>
+<p>&#x6216;&#x662F;&#x7528;vec!&#x5B8F;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> v: <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-keyword">i32</span>&gt; = <span class="hljs-built_in">vec!</span>[];
+<span class="hljs-keyword">let</span> v = <span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">let</span> v = <span class="hljs-built_in">vec!</span>[<span class="hljs-number">0</span>; <span class="hljs-number">10</span>];
+</code></pre>
+<p>&#x4F60;&#x53EF;&#x7528;push&#x5C06;&#x503C;&#x653E;&#x5230;&#x4E00;&#x4E2A;vector&#x5C3E;&#x90E8;(&#x9700;&#x8981;&#x65F6;&#x4F1A;&#x5BF9;vector&#x6269;&#x5BB9;)</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> v = <span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>];
+v.push(<span class="hljs-number">3</span>);
+</code></pre>
+<p>&#x5C06;&#x503C;pop&#x51FA;&#x6765;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> v = <span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>];
+<span class="hljs-keyword">let</span> two = v.pop();
+</code></pre>
+<p>Vectors&#x652F;&#x6301;&#x7D22;&#x5F15;(&#x901A;&#x8FC7;Index&#x548C;IndexMut traits&#x5B9E;&#x73B0;)</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> v = <span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-keyword">let</span> three = v[<span class="hljs-number">2</span>];
+v[<span class="hljs-number">1</span>] = v[<span class="hljs-number">1</span>] + <span class="hljs-number">5</span>;
+</code></pre>
+<h3 id="&#x539F;&#x6587;&#x5730;&#x5740;"><a name="&#x539F;&#x6587;&#x5730;&#x5740;" class="plugin-anchor" href="#&#x539F;&#x6587;&#x5730;&#x5740;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x6587;&#x5730;&#x5740;</h3>
+<p><a href="https://doc.rust-lang.org/std/vec/index.html" target="_blank">doc.rust-lang.org</a></p>
 
                                 
                                 </section>
@@ -609,10 +631,10 @@
 
             
                 
-                
-                <a href="Primitive_Type_slice.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Primitive Type slice">
-                    <i class="fa fa-angle-right"></i>
+                <a href="Module_std::ptr.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: std::ptr">
+                    <i class="fa fa-angle-left"></i>
                 </a>
+                
                 
             
         
@@ -621,7 +643,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Primitive Type range","level":"1.3.1","depth":2,"next":{"title":"Primitive Type slice","level":"1.3.2","depth":2,"path":"Primitive_Type/Primitive_Type_slice.md","ref":"Primitive_Type/Primitive_Type_slice.md","articles":[]},"previous":{"title":"Rust基础类型","level":"1.3","depth":1,"ref":"","articles":[{"title":"Primitive Type range","level":"1.3.1","depth":2,"path":"Primitive_Type/Primitive_Type_Range.md","ref":"Primitive_Type/Primitive_Type_Range.md","articles":[]},{"title":"Primitive Type slice","level":"1.3.2","depth":2,"path":"Primitive_Type/Primitive_Type_slice.md","ref":"Primitive_Type/Primitive_Type_slice.md","articles":[]},{"title":"Primitive Type array","level":"1.3.3","depth":2,"path":"Primitive_Type/Primitive_Type_array.md","ref":"Primitive_Type/Primitive_Type_array.md","articles":[]},{"title":"Primitive Type pointer","level":"1.3.4","depth":2,"path":"Primitive_Type/Primitive_Type_pointer.md","ref":"Primitive_Type/Primitive_Type_pointer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","anchors","github","github-buttons","sharing-plus","favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Fijiisland"},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{},"github-buttons":{"buttons":[{"user":"Fijiisland","repo":"Rust-doc-CHN","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Fijiisland","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Rust-doc-CHN","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/Fijiisland"}},"gitbook":"3.2.3","description":"Rust官方文档翻译，个人爱好"},"file":{"path":"Primitive_Type/Primitive_Type_Range.md","mtime":"2020-09-24T04:40:34.119Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-25T14:12:54.509Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"std::vec","level":"1.4.4","depth":2,"next":{"title":"Structs","level":"1.5","depth":1,"ref":"","articles":[{"title":"std::sync::mpsc::TryIter","level":"1.5.1","depth":2,"path":"Struct/Struct_std::sync::mpsc::TryIter.md","ref":"Struct/Struct_std::sync::mpsc::TryIter.md","articles":[]}]},"previous":{"title":"std::ptr","level":"1.4.3","depth":2,"path":"Module/Module_std::ptr.md","ref":"Module/Module_std::ptr.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","anchors","github","github-buttons","sharing-plus","favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Fijiisland"},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{},"github-buttons":{"buttons":[{"user":"Fijiisland","repo":"Rust-doc-CHN","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Fijiisland","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Rust-doc-CHN","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/Fijiisland"}},"gitbook":"3.2.3","description":"Rust官方文档翻译，个人爱好"},"file":{"path":"Module/Module_std::vec.md","mtime":"2020-09-24T07:08:34.036Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-25T14:12:54.509Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

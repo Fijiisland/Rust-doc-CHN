@@ -66,8 +66,6 @@
     <link rel="next" href="../ps/handbooks.md" />
     
     
-    <link rel="prev" href="../ch5/README.md" />
-    
 
     
     
@@ -133,14 +131,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../Keyword/Keyword_const.html">
+        <li class="chapter " data-level="1.2" >
             
-                <a href="../Keyword/Keyword_const.html">
+                <span>
             
                     
                     Rust关键字
             
-                </a>
+                </span>
             
 
             
@@ -243,14 +241,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../ch1/README.md">
+        <li class="chapter " data-level="1.3" >
             
                 <span>
             
                     
                     Rust基础类型
             
-                </a>
+                </span>
             
 
             
@@ -314,14 +312,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../ch2/README.md">
+        <li class="chapter " data-level="1.4" >
             
                 <span>
             
                     
                     Rust的各大模块
             
-                </a>
+                </span>
             
 
             
@@ -367,12 +365,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../ch2/handbook.md">
+        <li class="chapter " data-level="1.4.4" data-path="../Module/Module_std::vec.html">
             
-                <span>
+                <a href="../Module/Module_std::vec.html">
             
                     
-                    个人教程
+                    std::vec
             
                 </a>
             
@@ -385,14 +383,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../ch3/README.md">
+        <li class="chapter " data-level="1.5" >
             
                 <span>
             
                     
                     Structs
             
-                </a>
+                </span>
             
 
             
@@ -417,14 +415,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../ch4/README.md">
+        <li class="chapter " data-level="1.6" >
             
                 <span>
             
                     
                     Rust Traits
             
-                </a>
+                </span>
             
 
             
@@ -462,14 +460,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="../ch5/README.md">
+        <li class="chapter " data-level="1.7" >
             
                 <span>
             
                     
                     Rust Unions
             
-                </a>
+                </span>
             
 
             
@@ -619,7 +617,89 @@
 </code></pre>
 <p>&#x7F16;&#x8BD1;&#x5668;&#x4FBF;&#x77E5;&#x9053;&#x4E0D;&#x9700;&#x5728;&#x6B64;&#x6BB5;&#x4EE3;&#x7801;&#x4E0A;&#x505A;&#x4EFB;&#x4F55;&#x4E0D;&#x6B63;&#x786E;&#x7684;&#x5047;&#x8BBE;&#x6216;&#x8005;&#x4F18;&#x5316;&#x3002;</p>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x5C06;MaybeUninit<t>&#x60F3;&#x6210;&#x7C7B;&#x4F3C;Option<t>&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x4F46;&#x662F;&#x7F3A;&#x4E4F;&#x8FD0;&#x884C;&#x65F6;&#x8FFD;&#x8E2A;&#x4EE5;&#x53CA;&#x5B89;&#x5168;&#x6027;&#x68C0;&#x67E5;&#x3002;</t></t></p>
-<p>assume_init()</p>
+<h3 id="out-pointers-&#x5916;&#x90E8;&#x6307;&#x9488;"><a name="out-pointers-&#x5916;&#x90E8;&#x6307;&#x9488;" class="plugin-anchor" href="#out-pointers-&#x5916;&#x90E8;&#x6307;&#x9488;"><i class="fa fa-link" aria-hidden="true"></i></a>out-pointers &#x5916;&#x90E8;&#x6307;&#x9488;</h3>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x7528;MaybeUninit<t>&#x5B9E;&#x73B0;&quot;out-pointers&quot;&#xFF1A;&#x6211;&#x4EEC;&#x4E0D;&#x4ECE;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x662F;&#x7ED9;&#x51FD;&#x6570;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x4E00;&#x4E9B;&#x5185;&#x5B58;(&#x672A;&#x521D;&#x59CB;&#x5316;&#x7684;)&#x7684;&#x6307;&#x9488;&#xFF0C;&#x5E76;&#x5C06;&#x6570;&#x636E;&#x653E;&#x5230;&#x91CC;&#x9762;&#x3002;&#x5F53;&#x201C;&#x63A7;&#x5236;&#x8D1F;&#x8D23;&#x5B58;&#x50A8;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x7684;&#x5185;&#x5B58;&#x5982;&#x4F55;&#x5206;&#x914D;&#x201D;&#x8FD9;&#x4EF6;&#x4E8B;&#x5BF9;&#x8C03;&#x7528;&#x8005;&#x5F88;&#x91CD;&#x8981;&#x65F6;&#xFF0C;&#x5E76;&#x4E14;&#x4F60;&#x60F3;&#x907F;&#x514D;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x79FB;&#x52A8;&#xFF0C;out-pointers&#x4F1A;&#x5F88;&#x6709;&#x7528;&#xFF1A;</t></p>
+<pre><code class="lang-rust"><span class="hljs-keyword">use</span> std::mem::MaybeUninit;
+
+<span class="hljs-keyword">unsafe</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">make_vec</span></span>(out: *<span class="hljs-keyword">mut</span> <span class="hljs-built_in">Vec</span>&lt;<span class="hljs-keyword">i32</span>&gt;) {
+    <span class="hljs-comment">// &#x2018;write&#x2019;&#x5E76;&#x4E0D;&#x4F1A;drop&#x65E7;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x8FD9;&#x5F88;&#x91CD;&#x8981;</span>
+    out.write(<span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span> ,<span class="hljs-number">3</span>]);
+}
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> v = MaybeUninit::uninit();
+<span class="hljs-keyword">unsafe</span> { make_vec(v.as_mut_ptr(); }
+<span class="hljs-comment">// &#x73B0;&#x5728;&#x6211;&#x4EEC;&#x77E5;&#x9053;&apos;v&apos;&#x5DF2;&#x88AB;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x8FD9;&#x4E5F;&#x786E;&#x4FDD;vector&#x5F97;&#x5230;&#x6B63;&#x786E;&#x7684;drop&#x3002;</span>
+<span class="hljs-keyword">let</span> v = <span class="hljs-keyword">unsafe</span> { v.assume_init() };
+<span class="hljs-built_in">assert_eq!</span>(&amp;v, &amp;[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);
+</code></pre>
+<h3 id="initializing-an-array-element-by-element-&#x9010;&#x5143;&#x7D20;&#x5730;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;"><a name="initializing-an-array-element-by-element-&#x9010;&#x5143;&#x7D20;&#x5730;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;" class="plugin-anchor" href="#initializing-an-array-element-by-element-&#x9010;&#x5143;&#x7D20;&#x5730;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;"><i class="fa fa-link" aria-hidden="true"></i></a>Initializing an array element-by-element: &#x9010;&#x5143;&#x7D20;&#x5730;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;</h3>
+<p>MaybeUninit<t>&#x53EF;&#x7528;&#x6765;&#x9010;&#x5143;&#x7D20;&#x5730;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x5927;&#x6570;&#x7EC4;&#x3002;</t></p>
+<pre><code class="lang-rust"><span class="hljs-keyword">use</span> std::mem::{<span class="hljs-keyword">self</span>, MaybeUninit};
+
+<span class="hljs-keyword">let</span> data = {
+    <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&apos;MaybeUninit&apos;&#x7684;&#x672A;&#x521D;&#x59CB;&#x5316;&#x6570;&#x7EC4;&#x3002;&apos;assume_init&apos;&#x662F;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x8FD9;&#x662F;&#x7531;</span>
+    <span class="hljs-comment">// &#x4E8E;&#x6211;&#x4EEC;&#x5728;&#x6B64;&#x8981;&#x6C42;&#x521D;&#x59CB;&#x5316;&#x7684;&#x7C7B;&#x578B;&#x4E3A;&#x5F88;&#x591A;&#x4E2A;&apos;MaybeUninits&apos;&#xFF0C;&#x5B83;&#x4EEC;&#x5E76;&#x4E0D;&#x8981;&#x6C42;&#x521D;&#x59CB;</span>
+    <span class="hljs-comment">// &#x5316;&#x3002;</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> data: [MaybeUninit&lt;<span class="hljs-built_in">Vec</span>&lt;<span class="hljs-keyword">u32</span>&gt;&gt;; <span class="hljs-number">1000</span>] = <span class="hljs-keyword">unsafe</span> {
+        MaybeUninit::uninit().assume_init()
+    };
+
+    <span class="hljs-comment">// &#x4E22;&#x5F03;&#x4E00;&#x4E2A;&apos;MaybeUninit&apos;&#x5E76;&#x65E0;&#x5927;&#x788D;&#x3002;&#x56E0;&#x6B64;&#x4F7F;&#x7528;raw pointer&#xFF0C;&#x800C;&#x975E;&#x4F7F;</span>
+    <span class="hljs-comment">// &#x7528;&apos;ptr::write&apos;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x5E76;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x65E7;&#x7684;&#x672A;&#x521D;&#x59CB;&#x5316;&#x503C;&#x88AB;drop&#x3002;&#x540C;&#x65F6;&#x82E5;&#x5728;&#x6B64;&#x5FAA;&#x73AF;</span>
+    <span class="hljs-comment">// &#x4E2D;&#x51FA;&#x73B0;&#x4E86;panic&#xFF0C;&#x8BF4;&#x660E;&#x4EA7;&#x751F;&#x4E86;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x5E76;&#x65E0;&#x5185;&#x5B58;&#x5B89;&#x5168;&#x95EE;&#x9898;&#x3002;</span>
+    <span class="hljs-keyword">for</span> elem <span class="hljs-keyword">in</span> &amp;<span class="hljs-keyword">mut</span> data[...] {
+        *elem = MaybeUninit::new(<span class="hljs-built_in">vec!</span>[<span class="hljs-number">42</span>]);
+    }
+
+    <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x5DE5;&#x4F5C;&#x5DF2;&#x5B8C;&#x6210;&#x3002;&#x73B0;&#x5728;&#x5C06;&#x6B64;&#x6570;&#x7EC4;&#x8F6C;&#x4E3A;&#x5DF2;&#x521D;&#x59CB;&#x5316;&#x7C7B;&#x578B;&#x3002;</span>
+    <span class="hljs-keyword">unsafe</span> { mem::transmute&lt;_, [<span class="hljs-built_in">Vec</span>&lt;<span class="hljs-keyword">u32</span>&gt;; <span class="hljs-number">1000</span>]&gt;(data) }
+};
+
+<span class="hljs-built_in">assert_eq!</span>(&amp;data[<span class="hljs-number">0</span>], &amp;[<span class="hljs-number">42</span>]);
+</code></pre>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x90E8;&#x5206;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x5B83;&#x5728;&#x8F83;&#x4F4E;&#x7EA7;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E2D;&#x51FA;&#x73B0;&#x3002;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">use</span> std::mem::MaybeUninit;
+<span class="hljs-keyword">use</span> std::ptr;
+
+<span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E3A;&apos;MaybeUninit&apos;&#x7684;&#x672A;&#x521D;&#x59CB;&#x5316;array.&apos;assume_init&apos;&#x662F;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x8FD9;</span>
+<span class="hljs-comment">// &#x662F;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x5728;&#x6B64;&#x8981;&#x6C42;&#x521D;&#x59CB;&#x5316;&#x7684;&#x7C7B;&#x578B;&#x4E3A;&#x5F88;&#x591A;&#x4E2A;&apos;MaybeUninits&apos;&#xFF0C;&#x5B83;&#x4EEC;&#x5E76;&#x4E0D;&#x8981;&#x6C42;&#x521D;&#x59CB;&#x5316;&#x3002;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> data: [MaybeUninit&lt;<span class="hljs-built_in">String</span>&gt;; <span class="hljs-number">1000</span>] = <span class="hljs-keyword">unsafe</span> { MaybeUninit::uninit().assume_init() };
+<span class="hljs-comment">// &#x8BA1;&#x7B97;&#x6211;&#x4EEC;&#x5DF2;&#x8D4B;&#x503C;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> data_len: usize = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> elem <span class="hljs-keyword">in</span> &amp;<span class="hljs-keyword">mut</span> data[<span class="hljs-number">0</span>..<span class="hljs-number">500</span>] {
+    *elem = MaybeUninit::new(<span class="hljs-built_in">String</span>::from(<span class="hljs-string">&quot;hello&quot;</span>));
+    data_len += <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-comment">// &#x5BF9;&#x4E8E;array&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x82E5;&#x5B83;&#x5DF2;&#x88AB;&#x5206;&#x914D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5B83;drop&#x6389;</span>
+<span class="hljs-keyword">for</span> elem <span class="hljs-keyword">in</span> &amp;<span class="hljs-keyword">mut</span> data[<span class="hljs-number">0</span>..data_len] {
+    <span class="hljs-keyword">unsafe</span> { ptr::drop_in_place(elem.as_mut_ptr()); }
+}
+</code></pre>
+<h3 id="initializing-a-struct-field-by-field-&#x9010;&#x5B57;&#x6BB5;&#x5730;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;struct"><a name="initializing-a-struct-field-by-field-&#x9010;&#x5B57;&#x6BB5;&#x5730;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;struct" class="plugin-anchor" href="#initializing-a-struct-field-by-field-&#x9010;&#x5B57;&#x6BB5;&#x5730;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;struct"><i class="fa fa-link" aria-hidden="true"></i></a>Initializing a struct field-by-field &#x9010;&#x5B57;&#x6BB5;&#x5730;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;struct</h3>
+<p>&#x76EE;&#x524D;&#x8FD8;&#x4E0D;&#x5B58;&#x5728;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x80FD;&#x652F;&#x6301;&#x521B;&#x5EFA;&#x6307;&#x5411;MaybeUninit<struct>&#x4E2D;struct&#x5185;&#x90E8;&#x7684;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;raw pointer&#x6216;&#x5F15;&#x7528;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x8C03;&#x7528;MaybeUninit::uninit::<struct>()&#x5E76;&#x5BF9;&#x5B83;&#x5185;&#x90E8;&#x7684;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x8FD9;&#x79CD;&#x64CD;&#x4F5C;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x3002;</struct></struct></p>
+<h3 id="layout-&#x5E03;&#x5C40;"><a name="layout-&#x5E03;&#x5C40;" class="plugin-anchor" href="#layout-&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a>Layout &#x5E03;&#x5C40;</h3>
+<p>MaybeUninit<t>&#x786E;&#x4FDD;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5BF9;&#x9F50;&#x4EE5;&#x53CA;ABI&#xFF1A;</t></p>
+<pre><code class="lang-rust"><span class="hljs-keyword">use</span> std::mem::{MaybeUninit, size_of, align_of};
+<span class="hljs-built_in">assert_eq!</span>(size_of::&lt;MaybeUninit&lt;<span class="hljs-keyword">u64</span>&gt;&gt;(), size_of::&lt;<span class="hljs-keyword">u64</span>&gt;());
+<span class="hljs-built_in">assert_eq!</span>(align_of::&lt;MaybeUninit&lt;<span class="hljs-keyword">u64</span>&gt;&gt;(), align_of&lt;<span class="hljs-keyword">u64</span>&gt;());
+</code></pre>
+<p>&#x7136;&#x800C;&#xFF0C;&#x8C28;&#x8BB0;&#x5305;&#x542B;MaybeUninit<t>&#x7684;&#x7C7B;&#x578B;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x6709;&#x7740;&#x76F8;&#x540C;&#x7684;&#x5E03;&#x5C40;&#x3002;Rust&#x4E00;&#x822C;&#x4E0D;&#x4F1A;&#x786E;&#x4FDD;&#x4E00;&#x4E2A;&#x50CF;Foo<t>&#x7684;&#x5B57;&#x6BB5;&#x987A;&#x5E8F;&#x548C;&#x4E00;&#x4E2A;Foo\<u\>&#x76F8;&#x540C;&#xFF0C;&#x5373;&#x4F7F;T&#x4E0E;U&#x6709;&#x7740;&#x76F8;&#x540C;&#x7684;&#x5927;&#x5C0F;&#x4EE5;&#x53CA;&#x5185;&#x5B58;&#x5BF9;&#x9F50;&#x3002;&#x800C;&#x4E14;&#x5BF9;&#x4E8E;MaybeUninit<t>&#xFF0C;&#x4EFB;&#x4F55;&#x7684;bit&#x503C;&#x5747;&#x4E3A;&#x5408;&#x6CD5;&#xFF0C;Rust&#x7F16;&#x8BD1;&#x5668;&#x5E76;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;non-zero/niche-filling&#x4F18;&#x5316;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x66F4;&#x5927;&#x7684;&#x5C3A;&#x5BF8;&#xFF1A;</t></u\></t></t></p>
+<pre><code class="lang-rust"><span class="hljs-built_in">assert_eq!</span>(size_of::&lt;<span class="hljs-built_in">Option</span>&lt;<span class="hljs-keyword">bool</span>&gt;&gt;(), <span class="hljs-number">1</span>);
+<span class="hljs-built_in">assert_eq!</span>(size_of::&lt;<span class="hljs-built_in">Option</span>&lt;MaybeUninit&lt;<span class="hljs-keyword">bool</span>&gt;&gt;&gt;(), <span class="hljs-number">2</span>);
+</code></pre>
+<p>&#x5982;&#x679C;&#x7C7B;&#x578B;T&#x662F;FFI-safe&#x7684;&#xFF0C;then so is MaybeUninit<t> ???</t></p>
+<h3 id="implementations"><a name="implementations" class="plugin-anchor" href="#implementations"><i class="fa fa-link" aria-hidden="true"></i></a>Implementations</h3>
+<p>pub const fn new(val: T) -&gt; MaybeUninit<t></t></p>
+<p>&#x901A;&#x8FC7;&#x7ED9;&#x5B9A;&#x503C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;MaybeUninit<t>&#x3002;&#x5BF9;&#x6B64;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x8C03;&#x7528;assume_init&#x65B9;&#x6CD5;&#x662F;&#x5B89;&#x5168;&#x7684;&#x3002;</t></p>
+<p>&#x6CE8;&#x610F;drop&#x4E00;&#x4E2A;MaybeUninit<t>&#x5E76;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;T&#x7684;drop&#x4EE3;&#x7801;&#x3002;&#x82E5;T&#x5DF2;&#x88AB;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x786E;&#x4FDD;&#x5C06;T drop&#x6389;&#x662F;&#x4F60;&#x7684;&#x8D23;&#x4EFB;&#x3002;</t></p>
+<hr>
+<p>pub const fn uninit() -&gt; MaybeUninit<t></t></p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5904;&#x4E8E;&#x672A;&#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;&#x7684;MaybeUninit<t>&#x3002;</t></p>
+<p>&#x6CE8;&#x610F;drop&#x4E00;&#x4E2A;MaybeUninit<t>&#x5E76;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;T&#x7684;drop&#x4EE3;&#x7801;&#x3002;&#x82E5;T&#x5DF2;&#x88AB;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x786E;&#x4FDD;&#x5C06;T drop&#x6389;&#x662F;&#x4F60;&#x7684;&#x8D23;&#x4EFB;&#x3002;</t></p>
+<hr>
+<p>pub unsafe fn assume_init(self) -&gt; T</p>
 <p>&#x6B64;&#x51FD;&#x6570;&#x5C06;&#x5047;&#x5B9A;&#x76EE;&#x6807;MaybeUninit<t>&#x5BB9;&#x5668;&#x5185;&#x7684;&#x503C;&#x5DF2;&#x7ECF;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5E76;&#x5C06;&#x503C;&#x4ECE;MaybeUninit<t>&#x4E2D;&#x53D6;&#x51FA;&#x8FD4;&#x56DE;&#x3002;
 &#x6CE8;&#x610F;&#x5B83;&#x5E76;&#x4E0D;&#x4FDD;&#x8BC1;&#x76EE;&#x6807;&#x5DF2;&#x7ECF;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x82E5;&#x5BF9;&#x672A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x76EE;&#x6807;&#x64CD;&#x4F5C;&#x4F1A;&#x9020;&#x6210;&#x672A;&#x5B9A;&#x4E49;&#x884C;&#x4E3A;&#x3002;</t></t></p>
 <h4 id="example"><a name="example" class="plugin-anchor" href="#example"><i class="fa fa-link" aria-hidden="true"></i></a>Example:</h4>
@@ -634,6 +714,37 @@
 };
 <span class="hljs-built_in">assert_eq!</span>(x_init, <span class="hljs-literal">true</span>);
 </code></pre>
+<hr>
+<p>pub fn uninit_array<const len:="" usize="">() -&gt; [MaybeUninit<t>; LEN]</t></const></p>
+<blockquote>
+<p>&#x6B64;&#x4E3A;nightly&#x7248;&#x672C;&#x7684;&#x5B9E;&#x9A8C;&#x6027;API(maybe_uninit_uninit_array)</p>
+</blockquote>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x82E5;&#x5E72;&#x4E2A;MaybeUninit<t>&#x7684;array&#xFF0C;&#x5176;&#x5904;&#x4E8E;&#x672A;&#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;&#x3002;</t></p>
+<p>&#x5982;&#x4F60;&#x60F3;&#x4E86;&#x89E3;&#x6B64;API&#xFF0C;&#x8BF7;&#x524D;&#x5F80;&#x539F;&#x6587;&#x4F4D;&#x7F6E;&#xFF1A;<a href="https://doc.rust-lang.org/std/mem/union.MaybeUninit.html#method.uninit_array" target="_blank">uninit_array</a></p>
+<hr>
+<p>pub fn zeroed() -&gt; MaybeUninit<t></t></p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5904;&#x4E8E;&#x672A;&#x521D;&#x59CB;&#x5316;&#x6001;&#x7684;MaybeUninit<t>&#xFF0C;&#x4E14;&#x5C06;&#x5176;&#x5185;&#x5B58;&#x586B;&#x5145;&#x4E3A;0&#x5B57;&#x8282;&#x3002;&#x8FD9;&#x53D6;&#x51B3;&#x4E8E;T&#x662F;&#x5426;&#x5DF2;&#x505A;&#x597D;&#x88AB;&#x6B63;&#x786E;&#x521D;&#x59CB;&#x5316;&#x7684;&#x51C6;&#x5907;&#x3002;&#x4F8B;&#x5982;&#xFF0C;MaybeUninit<usize>::zeroed()&#x5DF2;&#x88AB;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4F46;&#x662F;MaybeUninit&lt;&amp;&apos;static i32&gt;::zeroed()&#x5E76;&#x6CA1;&#x6709;&#x88AB;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x56E0;&#x4E3A;&#x5F15;&#x7528;&#x7981;&#x6B62;&#x4E3A;null(&#x82E5;&#x5F15;&#x7528;&#x7684;&#x5185;&#x5B58;&#x88AB;&#x586B;&#x5145;&#x4E3A;0&#x5B57;&#x8282;&#x4FBF;&#x4E3A;null)&#x3002;</usize></t></p>
+<p>&#x6CE8;&#x610F;drop&#x4E00;&#x4E2A;MaybeUninit<t>&#x5E76;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;T&#x7684;drop&#x4EE3;&#x7801;&#x3002;&#x82E5;T&#x5DF2;&#x88AB;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x786E;&#x4FDD;&#x5C06;T drop&#x6389;&#x662F;&#x4F60;&#x7684;&#x8D23;&#x4EFB;&#x3002;</t></p>
+<h4 id="example"><a name="example" class="plugin-anchor" href="#example"><i class="fa fa-link" aria-hidden="true"></i></a>Example</h4>
+<p>&#x6B64;&#x65B9;&#x6CD5;&#x7684;&#x6B63;&#x786E;&#x7528;&#x6CD5;&#xFF1A;&#x5C06;&#x4E00;&#x4E2A;struct&#x521D;&#x59CB;&#x5316;&#x4E3A;0&#xFF0C;&#x5176;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x5B57;&#x6BB5;&#x5747;&#x53EF;&#x6301;&#x6709;bit-pattern 0&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5408;&#x6CD5;&#x503C;&#x3002;(&#x8BD1;&#x6CE8;&#xFF1A;&#x672C;&#x4EBA;&#x5BF9;bit-pattern 0&#x7684;&#x7406;&#x89E3;&#x4E3A;&#xFF0C;&#x82E5;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x652F;&#x6301;bit-pattern&#xFF0C;&#x90A3;&#x4E48;0&#x548C;1&#x53EF;&#x4EE5;&#x6B63;&#x786E;&#x4EE3;&#x8868;&#x5176;&#x4E00;&#x79CD;&#x2018;&#x503C;&#x2019;&#xFF0C;&#x6BD4;&#x5982;u8&#x7684;bit-pattern 0&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4E3A;0&#xFF1B;&#x800C;bool&#x7C7B;&#x578B;&#x7684;bit-pattern 0&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4E3A;false&#xFF0C;&#x800C;1&#x5BF9;&#x5E94;false)</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">use</span> std::mem::MaybeUninit;
+
+<span class="hljs-keyword">let</span> x = MaybeUninit::&lt;(<span class="hljs-keyword">u8</span>, <span class="hljs-keyword">bool</span>)&gt;::zeroed();
+<span class="hljs-keyword">let</span> x = <span class="hljs-keyword">unsafe</span> { x.assume_init() };
+<span class="hljs-built_in">assert_eq!</span>(x, (<span class="hljs-number">0</span>, <span class="hljs-literal">false</span>));
+</code></pre>
+<p>&#x5BF9;&#x6B64;&#x65B9;&#x6CD5;&#x7684;&#x9519;&#x8BEF;&#x4F7F;&#x7528;&#xFF1A;&#x4EE5;0&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;struct&#xFF0C;&#x4F46;&#x5176;&#x5B57;&#x6BB5;&#x5E76;&#x4E0D;&#x652F;&#x6301;&#x5C06;0&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5408;&#x6CD5;&#x503C;&#x3002;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">use</span> std::mem::MaybeUninit;
+
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">NotZero</span></span> { One = <span class="hljs-number">1</span>, Two = <span class="hljs-number">2</span> };
+
+<span class="hljs-keyword">let</span> x = MaybeUninit::&lt;(<span class="hljs-keyword">u8</span>, NotZero)&gt;::zeroed();
+<span class="hljs-keyword">let</span> x = <span class="hljs-keyword">unsafe</span> { x.assume_init() };
+<span class="hljs-comment">// &#x5728;pair&#x5185;&#x90E8;&#xFF0C;&#x6211;&#x4EEC;&#x52A0;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&apos;NotZero&apos;&#xFF0C;&#x5176;&#x5E76;&#x6CA1;&#x6709;0&#x503C;</span>
+<span class="hljs-comment">// &#x6B64;&#x4E3A;&#x672A;&#x5B9A;&#x4E49;&#x884C;&#x4E3A;&#x3002;</span>
+</code></pre>
+<hr>
+<p>pub fn write(&amp;mut self, val: T) -&gt; &amp;mut T</p>
 <h3 id="&#x539F;&#x6587;&#x5730;&#x5740;"><a name="&#x539F;&#x6587;&#x5730;&#x5740;" class="plugin-anchor" href="#&#x539F;&#x6587;&#x5730;&#x5740;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x6587;&#x5730;&#x5740;</h3>
 <p><a href="https://doc.rust-lang.org/std/mem/union.MaybeUninit.html" target="_blank">doc.rust-lang.org</a></p>
 
@@ -663,12 +774,8 @@
 
             
                 
-                <a href="../ch5/README.md" class="navigation navigation-prev " aria-label="Previous page: Rust Unions">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
-                
-                <a href="../ps/handbooks.md" class="navigation navigation-next " aria-label="Next page: 备注">
+                <a href="../ps/handbooks.md" class="navigation navigation-next navigation-unique" aria-label="Next page: 备注">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -679,7 +786,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"std::mem::MaybeUninit","level":"1.7.1","depth":2,"next":{"title":"备注","level":"1.8","depth":1,"path":"ps/handbooks.md","ref":"ps/handbooks.md","articles":[]},"previous":{"title":"Rust Unions","level":"1.7","depth":1,"path":"ch5/README.md","ref":"ch5/README.md","articles":[{"title":"std::mem::MaybeUninit","level":"1.7.1","depth":2,"path":"Union/Union_std::mem::MaybeUninit.md","ref":"Union/Union_std::mem::MaybeUninit.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","anchors","github","github-buttons","sharing-plus","favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Fijiisland"},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{},"github-buttons":{"buttons":[{"user":"Fijiisland","repo":"Rust-doc-CHN","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Fijiisland","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Rust-doc-CHN","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/Fijiisland"}},"gitbook":"3.2.3","description":"Rust官方文档翻译，个人爱好"},"file":{"path":"Union/Union_std::mem::MaybeUninit.md","mtime":"2020-09-24T04:39:52.649Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-24T04:44:17.603Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"std::mem::MaybeUninit","level":"1.7.1","depth":2,"next":{"title":"备注","level":"1.8","depth":1,"path":"ps/handbooks.md","ref":"ps/handbooks.md","articles":[]},"previous":{"title":"Rust Unions","level":"1.7","depth":1,"ref":"","articles":[{"title":"std::mem::MaybeUninit","level":"1.7.1","depth":2,"path":"Union/Union_std::mem::MaybeUninit.md","ref":"Union/Union_std::mem::MaybeUninit.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","anchors","github","github-buttons","sharing-plus","favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Fijiisland"},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{},"github-buttons":{"buttons":[{"user":"Fijiisland","repo":"Rust-doc-CHN","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Fijiisland","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Rust-doc-CHN","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/Fijiisland"}},"gitbook":"3.2.3","description":"Rust官方文档翻译，个人爱好"},"file":{"path":"Union/Union_std::mem::MaybeUninit.md","mtime":"2020-09-25T14:12:11.969Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-25T14:12:54.509Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
