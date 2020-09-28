@@ -35,6 +35,8 @@ assert_eq!(None, iter.next());
 assert_eq!(None, iter.next());
 ```
 
+***
+
 ### Provided methods 提供的方法
 
 fn size_hint(&self) -> (usize, Option<usize>)
@@ -72,6 +74,8 @@ assert_eq!((3, Some(3)), iter.size_hint());
 ```rust
 let iter = (0..10).filter(|x| x % 2 == 0);
 ```
+
+***
     
 fn count(self) -> usize
 
@@ -98,6 +102,8 @@ assert_eq!(a.iter().count(), 3);
 let a = [1, 2 ,3 ,4 ,5];
 assert_eq!(a.iter().count(), 5);
 ```    
+
+***
     
 fn last(self) -> Option<Self::Item>
 
@@ -113,6 +119,8 @@ fn last(self) -> Option<Self::Item>
 let a = [1, 2, 3];
 assert_eq!(a.iter().last(), Some(&3));
 ```
+
+***
     
 fn nth(&mut self, n: usize) -> Option<Self::Item>
 
@@ -159,6 +167,86 @@ assert_eq!(iter.nth(1), None);
 ```rust
 let a = [1, 2, 3];
 assert_eq!(a.iter().nth(10), None);
+```
+
+***
+
+fn step_by(self, step: usize) -> StepBy<Self>
+
+创建一个指向同一点的迭代器，但是在每次迭代中按照给定的步长进行迭代。
+
+Note 1: 无论给定的步长为多少，迭代器的第一个元素总是会被返回。
+
+Note 2: 被忽略的元素被推出的时间不固定。StepBy表现得像是下面的序列：
+
+**next() -> nth(step-1) -> nth(step-1) -> ...**
+
+但是又能像下面的序列:
+
+**advance_n_and_return_first(step) -> advance_n_and_return_first(step) -> ...**
+
+用哪种方法取决于迭代器为性能的考量。第二个方法会提前推进迭代器并消费更多元素。
+
+我们所说的advance_n_and_return_first类似于下面的实现：
+
+```rust
+fn advance_n_and_return_first<I>(iter: &mut I, total_step: usize) -> Option<I::Item>
+where I: Iterator
+{
+	let next = iter.next();
+	if total_step > 1 {
+		iter.nth(total_step - 2);
+	}
+	next
+}
+```
+
+#### Panics
+
+给定步长为0时，此方法会panic。
+
+#### Examples
+
+基本用法：
+
+```rust
+let a = [0, 1, 2, 3, 4, 5];
+let mut iter = a.iter().step_by(2);
+
+assert_eq!(iter.next(), Some(&0));
+assert_eq!(iter.next(), Some(&2));
+assert_eq!(iter.next(), Some(&4));
+assert_eq!(iter.next(), None);
+```
+
+***
+
+fn chain<U>(self, other: U) -> Chain<Self, <U as IntoIterator>::IntoIter>
+where U: IntoIterator<Item = Self::Item>
+
+取两个迭代器并创建一个覆盖两个迭代器与一个相同序列的新迭代器。
+
+chain()会返回一个新迭代器，它的首次迭代遍历位于第一个迭代器中的值，然后遍历第二个迭代器。
+
+换句话说，它将两个迭代器链接为一个锁链🔗。
+
+[once](https://doc.rust-lang.org/std/iter/fn.once.html)方法常用来将一个单独的值适配到一个其它类型的迭代链中。
+
+#### Examples
+
+基本用法：
+
+```rust
+let a1 = [1, 2, 3];
+let a2 = [4, 5, 6];
+
+let mut iter = a1.iter().chain(a2.iter());
+```
+
+由于chain()的参数使用IntoIterator，我们可传递任何可转为Iterator的东西，不仅是Iterator本身。举个例子，slices(&[T])实现了IntoIterator，所以可直接传递给chain()。
+
+```rust
+
 ```
 
 ### 原文地址

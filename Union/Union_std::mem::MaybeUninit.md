@@ -238,6 +238,72 @@ let x = unsafe { x.assume_init() };
 
 pub fn write(&mut self, val: T) -> &mut T
 
+> 此为nightly版本的实验性API(maybe_uninit_extra #63567)
+
+设置MaybeUninit<T>内的值。这个操作将覆写当前内部值并且不会将旧值drop掉，所以，除非你想跳过析构这一步，最好谨慎点不要用此方法两次。为了方便，此方法还会返回指向self内容(现已安全初始化)的一个可变指针。
+
+***
+
+pub fn as_ptr(&self) -> *const T
+
+获取指向内部值的指针。除非MaybeUninit<T>已被初始化，否则读取此指针或者将它转为一个引用将是未定义行为。对此指针(非传递地)指向的内存进行写入是未定义行为(除了UnsafeCell<T>)。
+
+#### Examples
+
+这个方法的正确使用：
+
+```rust
+use std::mem::MaybeUninit;
+
+let mut x = MaybeUninit::<Vec<u32>>::uninit();
+unsafe { x.as_mut_ptr().write(vec![0, 1, 2]); }
+// 创建一个MaybeUninit<T>内部的引用。这没问题，因为我们已经将其初始化了。
+let x_vec = unsafe { &*x.as_ptr() };
+assert_eq!(x_vec.len(), 3);
+```
+
+此方法错误用法：
+
+```rust
+use std::mem::MaybeUninit;
+
+let x = MaybeUninit::<Vec<u32>>::uninit();
+let x_vec = unsafe { &*x.as_ptr() };
+// 我们创建了一个指向未初始化数组的引用，此为未定义行为！
+```
+
+注意Rust有关未初始化数据的引用规则还未完善，在它们完善前建议避免使用它们。
+
+***
+
+pub fn as_mut_ptr(&mut self) -> *mut T
+
+获取一个指向包含内容的可变指针。除非MaybeUninit<T>已被初始化，否则读取此指针或者将它转为一个引用将是未定义行为。对此指针指向的内存进行写入是未定义行为。
+
+#### Examples
+
+此方法的正确用法：
+
+```rust
+use std::mem::MaybeUninit;
+
+let mut x = MaybeUninit<Vec<u32>>::uninit();
+unsafe { x.as_mut_ptr().write(vec![0, 1, 2]); }
+
+let x_vec = unsafe { &mut *x.as_mut_ptr() };
+x_vec.push(3);
+assert_eq!(x_vec.len(), 4);
+```
+
+不正确用法：
+
+```rust
+use std::mem::MaybeUninit;
+
+let mut x = MaybeUninit::<Vec<u32>>::uninit();
+let x_vec = unsafe { &mut *x.as_mut_ptr() };
+```
+
 ### 原文地址
 
 [doc.rust-lang.org](https://doc.rust-lang.org/std/mem/union.MaybeUninit.html)
