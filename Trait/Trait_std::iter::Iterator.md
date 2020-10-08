@@ -1,4 +1,4 @@
-## Trait std::iter::Iterator
+# Trait std::iter::Iterator
 
 ### 描述：此为std::iter模块的核心，一个处理迭代器的接口
 
@@ -246,8 +246,65 @@ let mut iter = a1.iter().chain(a2.iter());
 由于chain()的参数使用IntoIterator，我们可传递任何可转为Iterator的东西，不仅是Iterator本身。举个例子，slices(&[T])实现了IntoIterator，所以可直接传递给chain()。
 
 ```rust
+let s1 = &[1, 2, 3];
+let s2 = &[4, 5, 6];
 
+let mut iter = s1.iter().chain(s2);
 ```
+
+如果使用Windows API，你或许会希望将OsStr转为Vec<u16>：
+
+```rust
+#[cfg(windows)]
+fn os_str_to_utf16(s: &std::ffi::OsStr) -> Vec<u16> {
+	use std::os::windows::ffi::OsStrExt;
+	e.encode_wide().chain(std::iter::once(0)).collect()
+}
+```
+
+***
+
+fn zip<U>(self, other: U) -> Zip<Self, <U as IntoIterator>::IntoIter>
+where U: IntoIterator
+
+将两个迭代器像拉链一样拉起来，转为一个元素为pairs的迭代器。
+
+zip()返回一个会迭代其它两个迭代器的新迭代器，返回一个tuple，其第一个元素来自第一个迭代器，第二个元素来自第二个迭代器。
+
+如果两个迭代器均返回None，被合并的迭代器的next方法会返回None。如果仅第一个迭代器返回None，zip将会短路，且第二个迭代器的next方法将不会被调用。
+
+#### Examples
+
+```rust
+let a1 = [1, 2, 3];
+let a2 = [4, 5, 6];
+
+let mut iter = a1.iter().zip(a2.iter());
+```
+
+实现了IntoIterator的类型同样可以使用zip：`let s = &[1, 2, 3];`
+
+zip()经常用来将一个无限迭代器zip成有限的。这之所以有效，是因为有限迭代器最终会返回None，以zipper结束。对range (0..)进行zip看起来很像[enumerate](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.enumerate)方法：
+
+```rust
+let enumerate: Vec<_> = "foo".chars().enumerate().collect();
+
+let zipper: Vec<_> = (0..).zip("foo".chars()).collect();
+
+assert_eq!((0, 'f'), enumerate[0]);
+assert_eq!((0, 'f'), zipper[0]);
+```
+
+***
+
+fn map<B, F>(self, f: F) -> Map<Self, F>
+where F: FnMut(Self::Item) -> B
+
+获取一个闭包，对原迭代器的每个元素调用此闭包并生成一个新的迭代器。
+
+map()通过其参数(实现了FnMut的参数)，将一个迭代器转换为另一个迭代器。
+
+==map()在概念上类似于for循环。然而，map()方法是lazy的，你最好在已准备好使用其它迭代器时使用它。==
 
 ### 原文地址
 

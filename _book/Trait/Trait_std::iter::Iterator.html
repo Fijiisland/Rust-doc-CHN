@@ -236,6 +236,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.8" data-path="../Keyword/Keyword_ref.html">
+            
+                <a href="../Keyword/Keyword_ref.html">
+            
+                    
+                    Keyword ref
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Keyword/Keyword_side_effect.html">
+            
+                <a href="../Keyword/Keyword_side_effect.html">
+            
+                    
+                    Keyword side effct
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -601,6 +627,7 @@
 <span class="hljs-built_in">assert_eq!</span>(<span class="hljs-literal">None</span>, iter.next());
 <span class="hljs-built_in">assert_eq!</span>(<span class="hljs-literal">None</span>, iter.next());
 </code></pre>
+<hr>
 <h3 id="provided-methods-&#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;"><a name="provided-methods-&#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;" class="plugin-anchor" href="#provided-methods-&#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>Provided methods &#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;</h3>
 <p>fn size_hint(&amp;self) -&gt; (usize, Option<usize>)</usize></p>
 <p>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x5269;&#x4F59;&#x957F;&#x5EA6;&#x7684;&#x8FB9;&#x754C;&#x5143;&#x7EC4;&#x3002;</p>
@@ -621,6 +648,7 @@
 <p>&#x4E00;&#x4E2A;&#x66F4;&#x590D;&#x6742;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
 <pre><code class="lang-rust"><span class="hljs-keyword">let</span> iter = (<span class="hljs-number">0</span>..<span class="hljs-number">10</span>).filter(|x| x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>);
 </code></pre>
+<hr>
 <p>fn count(self) -&gt; usize</p>
 <p>&#x6D88;&#x8D39;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x8BA1;&#x7B97;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#x5E76;&#x8FD4;&#x56DE;&#x3002;</p>
 <p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x91CD;&#x590D;&#x8C03;&#x7528;next&#x65B9;&#x6CD5;&#x76F4;&#x81F3;&#x9047;&#x5230;None&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x5B83;&#x2018;&#x770B;&#x89C1;&#x2019;Some&#x503C;&#x7684;&#x6B21;&#x6570;&#x3002;&#x6CE8;&#x610F;&#x5373;&#x4F7F;&#x8FED;&#x4EE3;&#x5668;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x90FD;&#x4E0D;&#x5305;&#x542B;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E5F;&#x5FC5;&#x987B;&#x81F3;&#x5C11;&#x8C03;&#x7528;&#x4E00;&#x6B21;next&#x3002;</p>
@@ -636,6 +664,7 @@
 <span class="hljs-keyword">let</span> a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span> ,<span class="hljs-number">3</span> ,<span class="hljs-number">4</span> ,<span class="hljs-number">5</span>];
 <span class="hljs-built_in">assert_eq!</span>(a.iter().count(), <span class="hljs-number">5</span>);
 </code></pre>
+<hr>
 <p>fn last(self) -&gt; Option<self::item></self::item></p>
 <p>&#x6D88;&#x8D39;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x8FD4;&#x56DE;&#x5176;&#x672B;&#x5C3E;&#x5143;&#x7D20;&#x3002;</p>
 <p>&#x6B64;&#x65B9;&#x6CD5;&#x8BC4;&#x4F30;&#x8FED;&#x4EE3;&#x5668;&#x77E5;&#x9053;&#x8FED;&#x4EE3;&#x5668;&#x8FD4;&#x56DE;None&#x3002;&#x6B64;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5B83;&#x5C06;&#x8FFD;&#x8E2A;&#x5F53;&#x524D;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5F53;&#x8FED;&#x4EE3;&#x5668;&#x8FD4;&#x56DE;None&#x540E;&#xFF0C;last&#x8FD4;&#x56DE;&#x5B83;&#x770B;&#x5230;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
@@ -644,6 +673,7 @@
 <pre><code class="lang-rust"><span class="hljs-keyword">let</span> a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
 <span class="hljs-built_in">assert_eq!</span>(a.iter().last(), <span class="hljs-literal">Some</span>(&amp;<span class="hljs-number">3</span>));
 </code></pre>
+<hr>
 <p>fn nth(&amp;mut self, n: usize) -&gt; Option<self::item></self::item></p>
 <p>&#x8FD4;&#x56DE;&#x8FED;&#x4EE3;&#x5668;&#x4E2D;&#x7B2C;n&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
 <p>&#x50CF;&#x5927;&#x591A;&#x6570;&#x7D22;&#x5F15;&#x64CD;&#x4F5C;&#x4E00;&#x6837;&#xFF0C;&#x5B83;&#x4ECE;0&#x5F00;&#x59CB;&#x8BA1;&#x6570;&#xFF0C;&#x6240;&#x4EE5;nth(0)&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;nth(1)&#x4E3A;&#x7B2C;&#x4E8C;&#x4E2A;&#x3002;</p>
@@ -673,6 +703,92 @@ iter.nth(<span class="hljs-number">6</span>).unwrap();
 <pre><code class="lang-rust"><span class="hljs-keyword">let</span> a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
 <span class="hljs-built_in">assert_eq!</span>(a.iter().nth(<span class="hljs-number">10</span>), <span class="hljs-literal">None</span>);
 </code></pre>
+<hr>
+<p>fn step_by(self, step: usize) -&gt; StepBy<self></self></p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x540C;&#x4E00;&#x70B9;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x4E2D;&#x6309;&#x7167;&#x7ED9;&#x5B9A;&#x7684;&#x6B65;&#x957F;&#x8FDB;&#x884C;&#x8FED;&#x4EE3;&#x3002;</p>
+<p>Note 1: &#x65E0;&#x8BBA;&#x7ED9;&#x5B9A;&#x7684;&#x6B65;&#x957F;&#x4E3A;&#x591A;&#x5C11;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x603B;&#x662F;&#x4F1A;&#x88AB;&#x8FD4;&#x56DE;&#x3002;</p>
+<p>Note 2: &#x88AB;&#x5FFD;&#x7565;&#x7684;&#x5143;&#x7D20;&#x88AB;&#x63A8;&#x51FA;&#x7684;&#x65F6;&#x95F4;&#x4E0D;&#x56FA;&#x5B9A;&#x3002;StepBy&#x8868;&#x73B0;&#x5F97;&#x50CF;&#x662F;&#x4E0B;&#x9762;&#x7684;&#x5E8F;&#x5217;&#xFF1A;</p>
+<p><strong>next() -&gt; nth(step-1) -&gt; nth(step-1) -&gt; ...</strong></p>
+<p>&#x4F46;&#x662F;&#x53C8;&#x80FD;&#x50CF;&#x4E0B;&#x9762;&#x7684;&#x5E8F;&#x5217;:</p>
+<p><strong>advance_n_and_return_first(step) -&gt; advance_n_and_return_first(step) -&gt; ...</strong></p>
+<p>&#x7528;&#x54EA;&#x79CD;&#x65B9;&#x6CD5;&#x53D6;&#x51B3;&#x4E8E;&#x8FED;&#x4EE3;&#x5668;&#x4E3A;&#x6027;&#x80FD;&#x7684;&#x8003;&#x91CF;&#x3002;&#x7B2C;&#x4E8C;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x63D0;&#x524D;&#x63A8;&#x8FDB;&#x8FED;&#x4EE3;&#x5668;&#x5E76;&#x6D88;&#x8D39;&#x66F4;&#x591A;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x6240;&#x8BF4;&#x7684;advance_n_and_return_first&#x7C7B;&#x4F3C;&#x4E8E;&#x4E0B;&#x9762;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">advance_n_and_return_first</span></span>&lt;I&gt;(iter: &amp;<span class="hljs-keyword">mut</span> I, total_step: usize) -&gt; <span class="hljs-built_in">Option</span>&lt;I::Item&gt;
+<span class="hljs-keyword">where</span> I: <span class="hljs-built_in">Iterator</span>
+{
+    <span class="hljs-keyword">let</span> next = iter.next();
+    <span class="hljs-keyword">if</span> total_step &gt; <span class="hljs-number">1</span> {
+        iter.nth(total_step - <span class="hljs-number">2</span>);
+    }
+    next
+}
+</code></pre>
+<h4 id="panics"><a name="panics" class="plugin-anchor" href="#panics"><i class="fa fa-link" aria-hidden="true"></i></a>Panics</h4>
+<p>&#x7ED9;&#x5B9A;&#x6B65;&#x957F;&#x4E3A;0&#x65F6;&#xFF0C;&#x6B64;&#x65B9;&#x6CD5;&#x4F1A;panic&#x3002;</p>
+<h4 id="examples"><a name="examples" class="plugin-anchor" href="#examples"><i class="fa fa-link" aria-hidden="true"></i></a>Examples</h4>
+<p>&#x57FA;&#x672C;&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> a = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> iter = a.iter().step_by(<span class="hljs-number">2</span>);
+
+<span class="hljs-built_in">assert_eq!</span>(iter.next(), <span class="hljs-literal">Some</span>(&amp;<span class="hljs-number">0</span>));
+<span class="hljs-built_in">assert_eq!</span>(iter.next(), <span class="hljs-literal">Some</span>(&amp;<span class="hljs-number">2</span>));
+<span class="hljs-built_in">assert_eq!</span>(iter.next(), <span class="hljs-literal">Some</span>(&amp;<span class="hljs-number">4</span>));
+<span class="hljs-built_in">assert_eq!</span>(iter.next(), <span class="hljs-literal">None</span>);
+</code></pre>
+<hr>
+<p>fn chain<u>(self, other: U) -&gt; Chain<self, <u="" as="" intoiterator="">::IntoIter&gt;
+where U: IntoIterator<item =="" self::item=""></item></self,></u></p>
+<p>&#x53D6;&#x4E24;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x5E76;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8986;&#x76D6;&#x4E24;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x4E0E;&#x4E00;&#x4E2A;&#x76F8;&#x540C;&#x5E8F;&#x5217;&#x7684;&#x65B0;&#x8FED;&#x4EE3;&#x5668;&#x3002;</p>
+<p>chain()&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x5B83;&#x7684;&#x9996;&#x6B21;&#x8FED;&#x4EE3;&#x904D;&#x5386;&#x4F4D;&#x4E8E;&#x7B2C;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x904D;&#x5386;&#x7B2C;&#x4E8C;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x3002;</p>
+<p>&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5B83;&#x5C06;&#x4E24;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x94FE;&#x63A5;&#x4E3A;&#x4E00;&#x4E2A;&#x9501;&#x94FE;&#x1F517;&#x3002;</p>
+<p><a href="https://doc.rust-lang.org/std/iter/fn.once.html" target="_blank">once</a>&#x65B9;&#x6CD5;&#x5E38;&#x7528;&#x6765;&#x5C06;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x503C;&#x9002;&#x914D;&#x5230;&#x4E00;&#x4E2A;&#x5176;&#x5B83;&#x7C7B;&#x578B;&#x7684;&#x8FED;&#x4EE3;&#x94FE;&#x4E2D;&#x3002;</p>
+<h4 id="examples"><a name="examples" class="plugin-anchor" href="#examples"><i class="fa fa-link" aria-hidden="true"></i></a>Examples</h4>
+<p>&#x57FA;&#x672C;&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> a1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-keyword">let</span> a2 = [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>];
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> iter = a1.iter().chain(a2.iter());
+</code></pre>
+<p>&#x7531;&#x4E8E;chain()&#x7684;&#x53C2;&#x6570;&#x4F7F;&#x7528;IntoIterator&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4F20;&#x9012;&#x4EFB;&#x4F55;&#x53EF;&#x8F6C;&#x4E3A;Iterator&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x4E0D;&#x4EC5;&#x662F;Iterator&#x672C;&#x8EAB;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;slices(&amp;[T])&#x5B9E;&#x73B0;&#x4E86;IntoIterator&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x76F4;&#x63A5;&#x4F20;&#x9012;&#x7ED9;chain()&#x3002;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> s1 = &amp;[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-keyword">let</span> s2 = &amp;[<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>];
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> iter = s1.iter().chain(s2);
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;Windows API&#xFF0C;&#x4F60;&#x6216;&#x8BB8;&#x4F1A;&#x5E0C;&#x671B;&#x5C06;OsStr&#x8F6C;&#x4E3A;Vec<u16>&#xFF1A;</u16></p>
+<pre><code class="lang-rust"><span class="hljs-meta">#[cfg(windows)]</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">os_str_to_utf16</span></span>(s: &amp;std::ffi::OsStr) -&gt; <span class="hljs-built_in">Vec</span>&lt;u16&gt; {
+    <span class="hljs-keyword">use</span> std::os::windows::ffi::OsStrExt;
+    e.encode_wide().chain(std::iter::<span class="hljs-keyword">once</span>(<span class="hljs-number">0</span>)).collect()
+}
+</code></pre>
+<hr>
+<p>fn zip<u>(self, other: U) -&gt; Zip<self, <u="" as="" intoiterator="">::IntoIter&gt;
+where U: IntoIterator</self,></u></p>
+<p>&#x5C06;&#x4E24;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x50CF;&#x62C9;&#x94FE;&#x4E00;&#x6837;&#x62C9;&#x8D77;&#x6765;&#xFF0C;&#x8F6C;&#x4E3A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E3A;pairs&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x3002;</p>
+<p>zip()&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4F1A;&#x8FED;&#x4EE3;&#x5176;&#x5B83;&#x4E24;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x7684;&#x65B0;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;tuple&#xFF0C;&#x5176;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6765;&#x81EA;&#x7B2C;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20;&#x6765;&#x81EA;&#x7B2C;&#x4E8C;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x5747;&#x8FD4;&#x56DE;None&#xFF0C;&#x88AB;&#x5408;&#x5E76;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x7684;next&#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;None&#x3002;&#x5982;&#x679C;&#x4EC5;&#x7B2C;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x8FD4;&#x56DE;None&#xFF0C;zip&#x5C06;&#x4F1A;&#x77ED;&#x8DEF;&#xFF0C;&#x4E14;&#x7B2C;&#x4E8C;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x7684;next&#x65B9;&#x6CD5;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="examples"><a name="examples" class="plugin-anchor" href="#examples"><i class="fa fa-link" aria-hidden="true"></i></a>Examples</h4>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> a1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-keyword">let</span> a2 = [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>];
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> iter = a1.iter().zip(a2.iter());
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#x4E86;IntoIterator&#x7684;&#x7C7B;&#x578B;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;zip&#xFF1A;<code>let s = &amp;[1, 2, 3];</code></p>
+<p>zip()&#x7ECF;&#x5E38;&#x7528;&#x6765;&#x5C06;&#x4E00;&#x4E2A;&#x65E0;&#x9650;&#x8FED;&#x4EE3;&#x5668;zip&#x6210;&#x6709;&#x9650;&#x7684;&#x3002;&#x8FD9;&#x4E4B;&#x6240;&#x4EE5;&#x6709;&#x6548;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x6709;&#x9650;&#x8FED;&#x4EE3;&#x5668;&#x6700;&#x7EC8;&#x4F1A;&#x8FD4;&#x56DE;None&#xFF0C;&#x4EE5;zipper&#x7ED3;&#x675F;&#x3002;&#x5BF9;range (0..)&#x8FDB;&#x884C;zip&#x770B;&#x8D77;&#x6765;&#x5F88;&#x50CF;<a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.enumerate" target="_blank">enumerate</a>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">let</span> enumerate: <span class="hljs-built_in">Vec</span>&lt;_&gt; = <span class="hljs-string">&quot;foo&quot;</span>.chars().enumerate().collect();
+
+<span class="hljs-keyword">let</span> zipper: <span class="hljs-built_in">Vec</span>&lt;_&gt; = (<span class="hljs-number">0</span>..).zip(<span class="hljs-string">&quot;foo&quot;</span>.chars()).collect();
+
+<span class="hljs-built_in">assert_eq!</span>((<span class="hljs-number">0</span>, <span class="hljs-string">&apos;f&apos;</span>), enumerate[<span class="hljs-number">0</span>]);
+<span class="hljs-built_in">assert_eq!</span>((<span class="hljs-number">0</span>, <span class="hljs-string">&apos;f&apos;</span>), zipper[<span class="hljs-number">0</span>]);
+</code></pre>
+<hr>
+<p>fn map<b, f="">(self, f: F) -&gt; Map<self, f="">
+where F: FnMut(Self::Item) -&gt; B</self,></b,></p>
+<p>&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x95ED;&#x5305;&#xFF0C;&#x5BF9;&#x539F;&#x8FED;&#x4EE3;&#x5668;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x8C03;&#x7528;&#x6B64;&#x95ED;&#x5305;&#x5E76;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x3002;</p>
+<p>map()&#x901A;&#x8FC7;&#x5176;&#x53C2;&#x6570;(&#x5B9E;&#x73B0;&#x4E86;FnMut&#x7684;&#x53C2;&#x6570;)&#xFF0C;&#x5C06;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x8F6C;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x3002;</p>
+<p>==map()&#x5728;&#x6982;&#x5FF5;&#x4E0A;&#x7C7B;&#x4F3C;&#x4E8E;for&#x5FAA;&#x73AF;&#x3002;&#x7136;&#x800C;&#xFF0C;map()&#x65B9;&#x6CD5;&#x662F;lazy&#x7684;&#xFF0C;&#x4F60;&#x6700;&#x597D;&#x5728;&#x5DF2;&#x51C6;&#x5907;&#x597D;&#x4F7F;&#x7528;&#x5176;&#x5B83;&#x8FED;&#x4EE3;&#x5668;&#x65F6;&#x4F7F;&#x7528;&#x5B83;&#x3002;==</p>
 <h3 id="&#x539F;&#x6587;&#x5730;&#x5740;"><a name="&#x539F;&#x6587;&#x5730;&#x5740;" class="plugin-anchor" href="#&#x539F;&#x6587;&#x5730;&#x5740;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x6587;&#x5730;&#x5740;</h3>
 <p><a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html" target="_blank">doc.rust-lang.org</a></p>
 
@@ -714,7 +830,7 @@ iter.nth(<span class="hljs-number">6</span>).unwrap();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"std::iter::Iterator","level":"1.6.1","depth":2,"next":{"title":"std::iter::IntoIterator","level":"1.6.2","depth":2,"path":"Trait/Trait_std::iter::IntoIterator.md","ref":"Trait/Trait_std::iter::IntoIterator.md","articles":[]},"previous":{"title":"Rust Traits","level":"1.6","depth":1,"ref":"","articles":[{"title":"std::iter::Iterator","level":"1.6.1","depth":2,"path":"Trait/Trait_std::iter::Iterator.md","ref":"Trait/Trait_std::iter::Iterator.md","articles":[]},{"title":"std::iter::IntoIterator","level":"1.6.2","depth":2,"path":"Trait/Trait_std::iter::IntoIterator.md","ref":"Trait/Trait_std::iter::IntoIterator.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","anchors","github","github-buttons","sharing-plus","favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Fijiisland"},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{},"github-buttons":{"buttons":[{"user":"Fijiisland","repo":"Rust-doc-CHN","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Fijiisland","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Rust-doc-CHN","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/Fijiisland"}},"gitbook":"3.2.3","description":"Rust官方文档翻译，个人爱好"},"file":{"path":"Trait/Trait_std::iter::Iterator.md","mtime":"2020-09-24T04:38:00.827Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-25T14:12:54.509Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"std::iter::Iterator","level":"1.6.1","depth":2,"next":{"title":"std::iter::IntoIterator","level":"1.6.2","depth":2,"path":"Trait/Trait_std::iter::IntoIterator.md","ref":"Trait/Trait_std::iter::IntoIterator.md","articles":[]},"previous":{"title":"Rust Traits","level":"1.6","depth":1,"ref":"","articles":[{"title":"std::iter::Iterator","level":"1.6.1","depth":2,"path":"Trait/Trait_std::iter::Iterator.md","ref":"Trait/Trait_std::iter::Iterator.md","articles":[]},{"title":"std::iter::IntoIterator","level":"1.6.2","depth":2,"path":"Trait/Trait_std::iter::IntoIterator.md","ref":"Trait/Trait_std::iter::IntoIterator.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","anchors","github","github-buttons","sharing-plus","favicon"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/Fijiisland"},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{},"github-buttons":{"buttons":[{"user":"Fijiisland","repo":"Rust-doc-CHN","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Fijiisland","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Rust-doc-CHN","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/Fijiisland"}},"gitbook":"3.2.3","description":"Rust官方文档翻译，个人爱好"},"file":{"path":"Trait/Trait_std::iter::Iterator.md","mtime":"2020-09-28T01:31:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-04T03:10:54.679Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

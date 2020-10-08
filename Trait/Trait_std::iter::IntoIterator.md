@@ -1,4 +1,4 @@
-## Trait std::iter::IntoIterator
+# Trait std::iter::IntoIterator
 
 ### 描述： 转换为一个迭代器Iterator.
 
